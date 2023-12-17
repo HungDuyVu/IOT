@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IOT Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <nav>
+    <div>
+      <h1>IOT Dashboard</h1>
+    </div>
+  </nav>
+
+  <div id="dashboard">
+    <div id="temperature" class="sensor-box">
+      <h2>Temperature Chart</h2>
+      <canvas id="temperature-chart"></canvas>
+    </div>
+
+    <div id="humidity" class="sensor-box">
+      <h2>Humidity Chart</h2>
+      <canvas id="humidity-chart"></canvas>
+    </div>
+
+    <div id="gas" class="sensor-box">
+      <h2>Gas Sensor</h2>
+      <p id="gas-value">0</p>
+    </div>
+
+    <div id="flame" class="sensor-box">
+      <h2>Flame Sensor</h2>
+      <p id="flame-value">0</p>
+    </div>
+  </div>
+
+  <div class="alarm-container">
+    <div id="alarm-light" class="alarm-light"></div>
+    <button id="toggle-alarm-light" class="alarm-button" onclick="toggleAlarmLight()">Turn On Alarm & Light</button>
+  </div>
+
+  <div id="sensor-data" class="sensor-box">
+    <h2>Sensor Data</h2>
+    <ul id="sensor-list"></ul>
+  </div>
+
+  <!-- Thêm container cho thông báo -->
+  <div class="notification-container" id="notification-container"></div>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
